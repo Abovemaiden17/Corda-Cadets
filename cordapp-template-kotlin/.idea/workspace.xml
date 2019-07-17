@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$USER_HOME$/CordaDailyChallenges" value="PREVIEW" />
+        <entry key="$USER_HOME$/Desktop/corda" value="PREVIEW" />
+        <entry key="$USER_HOME$/Desktop/corda-practice" value="PREVIEW" />
+        <entry key="$USER_HOME$/Desktop/corda-training-solutions" value="PREVIEW" />
+        <entry key="$USER_HOME$/Desktop/corda-training-solutions-master" value="PREVIEW" />
+        <entry key="$USER_HOME$/Desktop/corda-training-template" value="PREVIEW" />
+        <entry key="$USER_HOME$/Desktop/corda-training-template-master" value="PREVIEW" />
+        <entry key="$USER_HOME$/Desktop/cordapp-template-kotlin" value="PREVIEW" />
+        <entry key="$USER_HOME$/Desktop/cordapp-token-ownable" value="PREVIEW" />
+        <entry key="$USER_HOME$/Desktop/obligation-cordapp" value="PREVIEW" />
+        <entry key="$USER_HOME$/Desktop/samples" value="PREVIEW" />
+        <entry key="$USER_HOME$/Desktop/samples/obligation-cordapp" value="PREVIEW" />
+        <entry key="$USER_HOME$/Desktop/token-sdk" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../Corda/cordapp-template-kotlin" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../Corda/token-sdk" value="PREVIEW" />
+        <entry key="$USER_HOME$/IdeaProjects/bootcamp-cordapp" value="PREVIEW" />
+        <entry key="$USER_HOME$/corda-training-template" value="PREVIEW" />
+        <entry key="$USER_HOME$/corda-training-template-master" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="10" />
+    <option name="y" value="20" />
+    <option name="width" value="1346" />
+    <option name="height" value="688" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
