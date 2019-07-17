@@ -1,0 +1,13 @@
+2019-07-17 13:15:17,120 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
+2019-07-17 13:15:17,123 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
+
+   ______               __
+  / ____/     _________/ /___ _
+ / /     __  / ___/ __  / __ `/         People used to laugh at me when I said I wanted
+/ /___  /_/ / /  / /_/ / /_/ /          to be a comedian. Well they're not laughing now!
+\____/     /_/   \__,_/\__,_/
+
+--- Corda Open Source 4.1 (c11f6c1) -------------------------------------------------------------
+
+
+Logs can be found in                    : C:\Users\antonio\Documents\Corda-Cadets\cordapp-template-kotlin\build\nodes\PartyA\logs
