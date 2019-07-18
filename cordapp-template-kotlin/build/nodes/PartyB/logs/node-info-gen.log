@@ -1,0 +1,13 @@
+2019-07-18 13:51:06,724 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
+2019-07-18 13:51:06,765 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
+
+   ______               __
+  / ____/     _________/ /___ _
+ / /     __  / ___/ __  / __ `/         "It's OK computer, I go to sleep after
+/ /___  /_/ / /  / /_/ / /_/ /          twenty minutes of inactivity too!"
+\____/     /_/   \__,_/\__,_/
+
+--- Corda Open Source 4.1 (c11f6c1) -------------------------------------------------------------
+
+
+Logs can be found in                    : C:\Users\archie\Desktop\Activities\Corda-Cadets\cordapp-template-kotlin\build\nodes\PartyB\logs
