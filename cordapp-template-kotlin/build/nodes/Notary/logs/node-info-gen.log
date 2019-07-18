@@ -1,10 +1,10 @@
-2019-07-17 17:02:14,281 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
-2019-07-17 17:02:14,328 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
+2019-07-18 15:42:35,327 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
+2019-07-18 15:42:35,327 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
 
    ______               __
   / ____/     _________/ /___ _
- / /     __  / ___/ __  / __ `/         There was an earthquake in California,
-/ /___  /_/ / /  / /_/ / /_/ /          a local bank went into de-fault.
+ / /     __  / ___/ __  / __ `/         The problem with troubleshooting
+/ /___  /_/ / /  / /_/ / /_/ /          is that trouble shoots back.
 \____/     /_/   \__,_/\__,_/
 
 --- Corda Open Source 4.1 (c11f6c1) -------------------------------------------------------------

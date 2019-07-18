@@ -1,10 +1,10 @@
-2019-07-17 17:02:14,453 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
-2019-07-17 17:02:14,453 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
+2019-07-18 15:42:41,369 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
+2019-07-18 15:42:41,372 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
 
    ______               __
   / ____/     _________/ /___ _
- / /     __  / ___/ __  / __ `/         I met my bank manager yesterday and asked
-/ /___  /_/ / /  / /_/ / /_/ /          to check my balance ... he pushed me over!
+ / /     __  / ___/ __  / __ `/         My boss asked me who is the stupid one, me or him?
+/ /___  /_/ / /  / /_/ / /_/ /          I said everyone knows he doesn't hire stupid people.
 \____/     /_/   \__,_/\__,_/
 
 --- Corda Open Source 4.1 (c11f6c1) -------------------------------------------------------------

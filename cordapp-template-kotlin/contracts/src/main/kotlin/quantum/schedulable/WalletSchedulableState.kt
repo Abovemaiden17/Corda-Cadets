@@ -6,16 +6,24 @@ import net.corda.core.identity.Party
 import java.time.Instant
 
 @BelongsToContract(WalletSchedulableContract::class)
-class WalletSchedulableState(val initiator: Party,
-                             val amount: Long,
-                             private val nextActivityTime: Instant = Instant.now().plusSeconds(10)) : SchedulableState
+class WalletSchedulableState(val registrant: Party,
+                             val approved: Boolean,
+                             val requestTime: Instant,
+                             val delay: Long,
+                             override val linearId: UniqueIdentifier) : SchedulableState, LinearState
 {
-    override val participants: List<Party> get() = listOf(initiator)
+    override val participants: List<Party> get() = listOf(registrant)
     override fun nextScheduledActivity(thisStateRef: StateRef, flowLogicRefFactory: FlowLogicRefFactory): ScheduledActivity?
     {
+        val responseTime: Instant = requestTime.plusSeconds(delay)
         return ScheduledActivity(flowLogicRefFactory.create(
-                WalletSchedulableSelfIssueFlow::class.java, thisStateRef),
-                nextActivityTime
+                WalletSchedulableVerifyFlow::class.java, thisStateRef),
+                responseTime
         )
     }
 }
+
+//data class LinearIdWalletState(val registrant: Party,
+//                               val approved: Boolean,
+//                               override val linearId: UniqueIdentifier,
+//                               override val participants: List<Party>): LinearState

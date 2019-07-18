@@ -14,7 +14,6 @@ import quantum.states.TimeWindowState
 
 @InitiatingFlow
 @StartableByRPC
-@SchedulableFlow
 class TimeWindowRegisterFlow : TimeWindowFunctions()
 {
     @Suspendable

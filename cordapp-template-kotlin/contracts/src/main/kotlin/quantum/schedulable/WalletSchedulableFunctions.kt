@@ -2,6 +2,7 @@ package quantum.schedulable
 
 import co.paralleluniverse.fibers.Suspendable
 import net.corda.core.contracts.StateAndRef
+import net.corda.core.contracts.StateRef
 import net.corda.core.contracts.UniqueIdentifier
 import net.corda.core.flows.CollectSignaturesFlow
 import net.corda.core.flows.FinalityFlow
@@ -13,6 +14,7 @@ import net.corda.core.node.services.vault.QueryCriteria
 import net.corda.core.transactions.SignedTransaction
 import net.corda.core.transactions.TransactionBuilder
 import net.corda.core.utilities.ProgressTracker
+import java.time.Instant
 
 abstract class WalletSchedulableFunctions : FlowLogic<SignedTransaction>()
 {
@@ -45,5 +47,12 @@ abstract class WalletSchedulableFunctions : FlowLogic<SignedTransaction>()
     fun inputStateRef(id: UniqueIdentifier): StateAndRef<WalletSchedulableState> {
         val criteria = QueryCriteria.LinearStateQueryCriteria(linearId = listOf(id))
         return serviceHub.vaultService.queryBy<WalletSchedulableState>(criteria = criteria).states.single()
+    }
+
+    fun getTime(id: UniqueIdentifier): Instant {
+        val outputStateRef = StateRef(txhash = inputStateRef(id).ref.txhash, index = 0)
+        val queryCriteria = QueryCriteria.VaultQueryCriteria(stateRefs = listOf(outputStateRef))
+        val results = serviceHub.vaultService.queryBy<WalletSchedulableState>(queryCriteria)
+        return results.statesMetadata.single().recordedTime
     }
 }
