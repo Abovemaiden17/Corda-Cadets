@@ -4,6 +4,7 @@ import co.paralleluniverse.fibers.Suspendable
 import net.corda.core.contracts.Command
 import net.corda.core.flows.FlowSession
 import net.corda.core.flows.InitiatingFlow
+import net.corda.core.flows.SchedulableFlow
 import net.corda.core.flows.StartableByRPC
 import net.corda.core.transactions.SignedTransaction
 import net.corda.core.transactions.TransactionBuilder
@@ -13,6 +14,7 @@ import quantum.states.TimeWindowState
 
 @InitiatingFlow
 @StartableByRPC
+@SchedulableFlow
 class TimeWindowRegisterFlow : TimeWindowFunctions()
 {
     @Suspendable
