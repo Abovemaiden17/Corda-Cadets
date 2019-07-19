@@ -1,6 +1,7 @@
 package com.template.types
 
 import com.r3.corda.lib.tokens.contracts.types.TokenType
+import kotlin.Pair
 
 data class ExampleFixedTokenType(
         override val tokenIdentifier: String,
