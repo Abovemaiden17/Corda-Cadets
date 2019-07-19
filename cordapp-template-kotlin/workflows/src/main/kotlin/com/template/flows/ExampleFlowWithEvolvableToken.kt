@@ -5,6 +5,7 @@ import com.r3.corda.lib.tokens.contracts.states.EvolvableTokenType
 import com.r3.corda.lib.tokens.contracts.utilities.heldBy
 import com.r3.corda.lib.tokens.contracts.utilities.issuedBy
 import com.r3.corda.lib.tokens.contracts.utilities.of
+import com.r3.corda.lib.tokens.money.FiatCurrency
 import com.r3.corda.lib.tokens.workflows.flows.rpc.CreateEvolvableTokens
 import com.r3.corda.lib.tokens.workflows.flows.rpc.IssueTokens
 import com.template.states.ExampleEvolvableTokenType
@@ -23,8 +24,7 @@ import java.util.*
 class ExampleFlowWithEvolvableToken(
         val evolvableTokenId: String,
         val amount: Long,
-        val recipient: Party
-) : FlowLogic<SignedTransaction>() {
+        val recipient: Party) : FlowLogic<SignedTransaction>() {
     override val progressTracker = ProgressTracker()
 
     @Suspendable
