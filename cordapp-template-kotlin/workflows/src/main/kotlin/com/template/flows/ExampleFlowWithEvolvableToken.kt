@@ -29,7 +29,7 @@ class ExampleFlowWithEvolvableToken(
 
     @Suspendable
     override fun call(): SignedTransaction {
-        val notary = serviceHub.networkMapCache.notaryIdentities.first()
+        serviceHub.networkMapCache.notaryIdentities.first()
         val uuid = UUID.fromString(evolvableTokenId)
         val queryCriteria = QueryCriteria.LinearStateQueryCriteria(uuid = listOf(uuid))
         val tokenStateAndRef = serviceHub.vaultService.queryBy<EvolvableTokenType>(queryCriteria).states.single()
