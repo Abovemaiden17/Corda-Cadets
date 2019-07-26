@@ -1,13 +1,13 @@
-2019-07-19 16:48:38,132 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
-2019-07-19 16:48:38,135 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
+2019-07-26 10:26:35,107 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
+2019-07-26 10:26:35,111 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
 
    ______               __
   / ____/     _________/ /___ _
- / /     __  / ___/ __  / __ `/         When I discovered my toaster wasn't
-/ /___  /_/ / /  / /_/ / /_/ /          waterproof, I was shocked.
+ / /     __  / ___/ __  / __ `/         You should really try a seafood diet.
+/ /___  /_/ / /  / /_/ / /_/ /          It's easy: you see food and eat it.
 \____/     /_/   \__,_/\__,_/
 
---- Corda Open Source 4.1 (c11f6c1) -------------------------------------------------------------
+--- Corda Open Source 4.0 (503a2ff) -------------------------------------------------------------
 
 
 Logs can be found in                    : C:\webservices\Corda-Cadets\cordapp-template-kotlin\build\nodes\Notary\logs

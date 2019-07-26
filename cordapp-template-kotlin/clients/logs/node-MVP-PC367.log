@@ -1,0 +1,31 @@
+[WARN ] 2019-07-26T02:32:58,946 [background-preinit] Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+[INFO ] 2019-07-26T02:32:59,515 [main] ServerKt - Starting ServerKt on MVP-PC367 with PID 8308 (C:\webservices\Corda-Cadets\cordapp-template-kotlin\clients\build\classes\kotlin\main started by kelvin in C:\webservices\Corda-Cadets\cordapp-template-kotlin\clients)
+[INFO ] 2019-07-26T02:32:59,518 [main] ServerKt - No active profile set, falling back to default profiles: default
+[INFO ] 2019-07-26T02:32:59,630 [main] AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2488b073: startup date [Fri Jul 26 10:32:59 SGT 2019]; root of context hierarchy
+[INFO ] 2019-07-26T02:33:03,710 [main] TomcatWebServer - Tomcat initialized with port(s): 10050 (http)
+[INFO ] 2019-07-26T02:33:03,843 [main] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-10050"]
+[INFO ] 2019-07-26T02:33:03,903 [main] StandardService - Starting service [Tomcat]
+[INFO ] 2019-07-26T02:33:03,904 [main] StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.31
+[INFO ] 2019-07-26T02:33:03,920 [localhost-startStop-1] AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_221\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.2\jbr\\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.2\jbr\\bin\server;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\kotlinc\bin;%JAVA%\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\PostgreSQL\11\bin;C:\Program Files\Java\jdk1.8.0_221\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\kelvin\AppData\Roaming\npm;C:\Users\kelvin\AppData\Local\Programs\Microsoft VS Code\bin;.]
+[INFO ] 2019-07-26T02:33:05,814 [localhost-startStop-1] [/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2019-07-26T02:33:05,815 [localhost-startStop-1] ContextLoader - Root WebApplicationContext: initialization completed in 6190 ms
+[INFO ] 2019-07-26T02:33:06,124 [localhost-startStop-1] ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+[INFO ] 2019-07-26T02:33:06,130 [localhost-startStop-1] FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+[INFO ] 2019-07-26T02:33:06,131 [localhost-startStop-1] FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[INFO ] 2019-07-26T02:33:06,137 [localhost-startStop-1] FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[INFO ] 2019-07-26T02:33:06,138 [localhost-startStop-1] FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+[INFO ] 2019-07-26T02:33:10,177 [main] RPCClient - Startup took 2684 msec
+[INFO ] 2019-07-26T02:33:10,405 [main] SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ] 2019-07-26T02:33:10,800 [main] RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2488b073: startup date [Fri Jul 26 10:32:59 SGT 2019]; root of context hierarchy
+[INFO ] 2019-07-26T02:33:11,014 [main] RequestMappingHandlerMapping - Mapped "{[/templateendpoint],methods=[GET],produces=[text/plain]}" onto private final java.lang.String com.template.webserver.Controller.templateendpoint()
+[INFO ] 2019-07-26T02:33:11,024 [main] RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[INFO ] 2019-07-26T02:33:11,025 [main] RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[INFO ] 2019-07-26T02:33:11,103 [main] SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ] 2019-07-26T02:33:11,104 [main] SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[INFO ] 2019-07-26T02:33:11,179 [main] WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+[INFO ] 2019-07-26T02:33:11,426 [main] AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+[INFO ] 2019-07-26T02:33:11,479 [main] Http11NioProtocol - Starting ProtocolHandler ["http-nio-10050"]
+[INFO ] 2019-07-26T02:33:11,482 [main] NioSelectorPool - Using a shared selector for servlet write/read
+[INFO ] 2019-07-26T02:33:12,041 [main] TomcatWebServer - Tomcat started on port(s): 10050 (http) with context path ''
+[INFO ] 2019-07-26T02:33:12,071 [main] ServerKt - Started ServerKt in 15.583 seconds (JVM running for 18.423)
+[WARN ] 2019-07-26T02:34:30,442 [Thread-2 (ActiveMQ-client-global-threads)] RPCClientProxyHandler - Terminating observables.
