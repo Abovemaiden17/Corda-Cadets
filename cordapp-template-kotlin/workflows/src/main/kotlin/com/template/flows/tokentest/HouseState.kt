@@ -13,9 +13,8 @@ data class HouseState (val address: String,
                        val valuation: Amount<TokenType>,
                        override val maintainers: List<Party>,
                        override val fractionDigits: Int = 0,
-                       override val linearId: UniqueIdentifier = UniqueIdentifier()
-) : EvolvableTokenType()
+                       override val linearId: UniqueIdentifier = UniqueIdentifier()) : EvolvableTokenType()
 
 @CordaSerializable
-data class PriceNotification(val amount: Amount<TokenType>)
+data class PriceNotification(val amount: Long)
 
