@@ -1,6 +1,9 @@
 package quantumtoken.functions
 
 import co.paralleluniverse.fibers.Suspendable
+import com.r3.corda.lib.tokens.contracts.types.TokenPointer
+import com.r3.corda.lib.tokens.workflows.types.PartyAndToken
+import net.corda.core.contracts.LinearPointer
 import net.corda.core.contracts.StateAndRef
 import net.corda.core.contracts.UniqueIdentifier
 import net.corda.core.flows.CollectSignaturesFlow
@@ -8,6 +11,7 @@ import net.corda.core.flows.FinalityFlow
 import net.corda.core.flows.FlowLogic
 import net.corda.core.flows.FlowSession
 import net.corda.core.identity.Party
+import net.corda.core.node.services.Vault
 import net.corda.core.node.services.queryBy
 import net.corda.core.node.services.vault.QueryCriteria
 import net.corda.core.transactions.SignedTransaction
@@ -53,12 +57,21 @@ abstract class TestFunctions : FlowLogic<SignedTransaction>()
                 ?: throw IllegalArgumentException("No match found for $name")
     }
 
-    fun inputStateRef(id: UniqueIdentifier): StateAndRef<TestState> {
+    fun inputStateRefUsingLinearID(id: UniqueIdentifier): StateAndRef<TestState> {
         val criteria = QueryCriteria.LinearStateQueryCriteria(linearId = listOf(id))
         return serviceHub.vaultService.queryBy<TestState>(criteria = criteria).states.single()
     }
 
-    fun stringToUUID(id: String): UUID {
-        return UUID.fromString(id)
+    fun inputStateRefUsingUUID(id: UUID): StateAndRef<TestState> {
+        val criteria = QueryCriteria.LinearStateQueryCriteria(null, listOf(id), null, Vault.StateStatus.UNCONSUMED, null)
+        return serviceHub.vaultService.queryBy<TestState>(criteria = criteria).states.single()
+    }
+
+    fun stringToUUID(string: String): UUID {
+        return UUID.fromString(string)
+    }
+
+    fun getPartyAndToken(party: Party, token: TokenPointer<TestState>): PartyAndToken<TokenPointer<TestState>> {
+        return PartyAndToken(party, token)
     }
 }

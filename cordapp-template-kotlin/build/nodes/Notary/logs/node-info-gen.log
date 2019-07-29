@@ -1,10 +1,10 @@
-2019-07-19 15:21:21,434 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
-2019-07-19 15:21:21,437 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
+2019-07-29 10:46:32,074 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
+2019-07-29 10:46:32,077 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
 
    ______               __
   / ____/     _________/ /___ _
- / /     __  / ___/ __  / __ `/         Where do cryptographers go for
-/ /___  /_/ / /  / /_/ / /_/ /          entertainment? The security theatre.
+ / /     __  / ___/ __  / __ `/         I had an account with a bank in the
+/ /___  /_/ / /  / /_/ / /_/ /          North Pole, but they froze all my assets 
 \____/     /_/   \__,_/\__,_/
 
 --- Corda Open Source 4.1 (c11f6c1) -------------------------------------------------------------
