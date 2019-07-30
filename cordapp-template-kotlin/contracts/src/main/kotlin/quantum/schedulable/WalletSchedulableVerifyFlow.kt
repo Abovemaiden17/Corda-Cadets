@@ -41,10 +41,8 @@ class WalletSchedulableVerifyFlow (private val stateRef: StateRef): WalletSchedu
                                 ourIdentity.owningKey)
                 val input = serviceHub.toStateAndRef<WalletSchedulableState>(stateRef)
                 val registerTime = getTime(input.state.data.linearId)
-//                val timeWindow = TimeWindow.untilOnly(registerTime.plusSeconds(30))
                 addInputState(input)
                 addOutputState(outState(), WalletSchedulableContract.WALLETSCHEDULE_ID)
                 addCommand(selfIssueCommand)
-//                setTimeWindow(timeWindow)
     }
 }

@@ -2,34 +2,25 @@ package quantumtoken.flows
 
 import co.paralleluniverse.fibers.Suspendable
 import com.r3.corda.lib.tokens.contracts.states.FungibleToken
-import com.r3.corda.lib.tokens.contracts.states.NonFungibleToken
 import com.r3.corda.lib.tokens.contracts.types.TokenType
-import com.r3.corda.lib.tokens.contracts.utilities.issuedBy
-import com.r3.corda.lib.tokens.workflows.flows.move.MoveNonFungibleTokensFlow
 import com.r3.corda.lib.tokens.workflows.flows.move.addMoveNonFungibleTokens
 import com.r3.corda.lib.tokens.workflows.flows.move.addMoveTokens
-import com.r3.corda.lib.tokens.workflows.flows.rpc.IssueTokens
-import com.r3.corda.lib.tokens.workflows.flows.rpc.MoveNonFungibleTokens
 import com.r3.corda.lib.tokens.workflows.internal.flows.distribution.UpdateDistributionListFlow
 import com.r3.corda.lib.tokens.workflows.internal.flows.finality.ObserverAwareFinalityFlow
 import com.r3.corda.lib.tokens.workflows.internal.flows.finality.ObserverAwareFinalityFlowHandler
 import com.r3.corda.lib.tokens.workflows.internal.selection.TokenSelection
 import com.r3.corda.lib.tokens.workflows.types.PartyAndAmount
-import com.r3.corda.lib.tokens.workflows.utilities.heldBy
 import com.r3.corda.lib.tokens.workflows.utilities.ourSigningKeys
 import net.corda.confidential.IdentitySyncFlow
 import net.corda.core.contracts.Amount
 import net.corda.core.contracts.UniqueIdentifier
 import net.corda.core.flows.*
-import net.corda.core.node.services.Vault
-import net.corda.core.node.services.queryBy
-import net.corda.core.node.services.vault.QueryCriteria
 import net.corda.core.serialization.CordaSerializable
 import net.corda.core.transactions.SignedTransaction
 import net.corda.core.transactions.TransactionBuilder
 import net.corda.core.utilities.unwrap
 import quantumtoken.functions.TestFunctions
-import quantumtoken.states.TestState
+import quantumtoken.states.HouseState
 
 @CordaSerializable
 data class PriceNotification(val amount: Amount<TokenType>)
@@ -49,7 +40,7 @@ class TestSellHouseFlow (private val buyer: String,
         addMoveNonFungibleTokens(
                 txBuilder,
                 serviceHub,
-                evolvableTokenType.toPointer<TestState>(),
+                evolvableTokenType.toPointer<HouseState>(),
                 stringToParty(buyer)
         )
 
@@ -70,7 +61,7 @@ class TestSellHouseFlow (private val buyer: String,
         // Signing of transaction
         val ourSigningKeys = txBuilder.toLedgerTransaction(serviceHub).ourSigningKeys(serviceHub)
         val initialStx = serviceHub.signInitialTransaction(txBuilder, signingPubKeys = ourSigningKeys)
-        val stx = collectSignature(initialStx, listOf(session), ourSigningKeys)
+        val stx = collectSignatureWithPubKeys(initialStx, listOf(session), ourSigningKeys)
         subFlow(UpdateDistributionListFlow(stx))
         return subFlow(ObserverAwareFinalityFlow(stx, listOf(session)))
     }

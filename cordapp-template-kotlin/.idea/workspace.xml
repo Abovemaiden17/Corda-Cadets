@@ -2,23 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61754430-d905-4785-82bd-f87693a5ffe3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/cordapp-template-kotlin.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/antonio.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4.1/fileContent/fileContent.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4.1/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4.1/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/cordapp-template-kotlin-0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/cordapp-template-kotlin-0.1.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/nodes/.cache/apps/net.corda.node.Corda_4.1/NOTICE" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/.cache/apps/net.corda.node.Corda_4.1/NOTICE" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/nodes/.cache/apps/net.corda.node.Corda_4.1/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/.cache/apps/net.corda.node.Corda_4.1/log4j2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/nodes/.cache/apps/net.corda.node.Corda_4.1/reference.conf" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/.cache/apps/net.corda.node.Corda_4.1/reference.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/Notary/additional-node-infos/nodeInfo-2D1CA190724B008EF2466321520ABFD47CE0A9EC94FE17B034DE975A056082F3" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/Notary/additional-node-infos/nodeInfo-2D1CA190724B008EF2466321520ABFD47CE0A9EC94FE17B034DE975A056082F3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/nodes/Notary/additional-node-infos/nodeInfo-777DA369F066FE34BEDE3E6334A1006A4026A02DD76AFA798204BD015C9965DE" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/Notary/additional-node-infos/nodeInfo-777DA369F066FE34BEDE3E6334A1006A4026A02DD76AFA798204BD015C9965DE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/nodes/Notary/additional-node-infos/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/Notary/additional-node-infos/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/Notary/additional-node-infos/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/nodes/Notary/additional-node-infos/nodeInfo-E4477B559304AADFC0638772C0956A38FA2E2A7A5EB0E65D0D83E5884831879A" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/Notary/additional-node-infos/nodeInfo-E4477B559304AADFC0638772C0956A38FA2E2A7A5EB0E65D0D83E5884831879A" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/nodes/Notary/artemis/bindings/activemq-bindings-1.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/Notary/artemis/bindings/activemq-bindings-1.bindings" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/nodes/Notary/artemis/journal/activemq-data-1.amq" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/Notary/artemis/journal/activemq-data-1.amq" afterDir="false" />
@@ -36,8 +36,9 @@
       <change beforePath="$PROJECT_DIR$/build/nodes/Notary/persistence.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/Notary/persistence.mv.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/nodes/Notary/persistence.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/Notary/persistence.trace.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/nodes/Notary/process-id" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/Notary/process-id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyA/additional-node-infos/nodeInfo-2D1CA190724B008EF2466321520ABFD47CE0A9EC94FE17B034DE975A056082F3" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyA/additional-node-infos/nodeInfo-2D1CA190724B008EF2466321520ABFD47CE0A9EC94FE17B034DE975A056082F3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/nodes/PartyA/additional-node-infos/nodeInfo-777DA369F066FE34BEDE3E6334A1006A4026A02DD76AFA798204BD015C9965DE" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyA/additional-node-infos/nodeInfo-777DA369F066FE34BEDE3E6334A1006A4026A02DD76AFA798204BD015C9965DE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/nodes/PartyA/additional-node-infos/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyA/additional-node-infos/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyA/additional-node-infos/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/nodes/PartyA/additional-node-infos/nodeInfo-E4477B559304AADFC0638772C0956A38FA2E2A7A5EB0E65D0D83E5884831879A" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyA/additional-node-infos/nodeInfo-E4477B559304AADFC0638772C0956A38FA2E2A7A5EB0E65D0D83E5884831879A" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/nodes/PartyA/artemis/bindings/activemq-bindings-1.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyA/artemis/bindings/activemq-bindings-1.bindings" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/nodes/PartyA/artemis/journal/activemq-data-1.amq" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyA/artemis/journal/activemq-data-1.amq" afterDir="false" />
@@ -56,45 +57,99 @@
       <change beforePath="$PROJECT_DIR$/build/nodes/PartyA/persistence.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyA/persistence.mv.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/nodes/PartyA/persistence.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyA/persistence.trace.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/nodes/PartyA/process-id" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyA/process-id" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/additional-node-infos/nodeInfo-777DA369F066FE34BEDE3E6334A1006A4026A02DD76AFA798204BD015C9965DE" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyB/additional-node-infos/nodeInfo-777DA369F066FE34BEDE3E6334A1006A4026A02DD76AFA798204BD015C9965DE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/additional-node-infos/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyB/additional-node-infos/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/additional-node-infos/nodeInfo-E4477B559304AADFC0638772C0956A38FA2E2A7A5EB0E65D0D83E5884831879A" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyB/additional-node-infos/nodeInfo-E4477B559304AADFC0638772C0956A38FA2E2A7A5EB0E65D0D83E5884831879A" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/artemis/bindings/activemq-bindings-1.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyB/artemis/bindings/activemq-bindings-1.bindings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/artemis/journal/activemq-data-1.amq" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyB/artemis/journal/activemq-data-1.amq" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/artemis/journal/server.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyB/artemis/journal/server.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/brokers/rpc/bindings/activemq-bindings-1.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyB/brokers/rpc/bindings/activemq-bindings-1.bindings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/brokers/rpc/journal/server.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyB/brokers/rpc/journal/server.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/certificates/nodekeystore.jks" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyB/certificates/nodekeystore.jks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/certificates/sslkeystore.jks" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyB/certificates/sslkeystore.jks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/certificates/truststore.jks" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyB/certificates/truststore.jks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/cordapps/contracts-0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyB/cordapps/contracts-0.1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/cordapps/workflows-0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyB/cordapps/workflows-0.1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/logs/node-DESKTOP-EVIOB70.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyB/logs/node-DESKTOP-EVIOB70.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/logs/node-info-gen.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyB/logs/node-info-gen.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/network-parameters" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyB/network-parameters" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyB/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/persistence.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyB/persistence.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/persistence.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyB/persistence.trace.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/process-id" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyB/process-id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/additional-node-infos/nodeInfo-2D1CA190724B008EF2466321520ABFD47CE0A9EC94FE17B034DE975A056082F3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/additional-node-infos/nodeInfo-777DA369F066FE34BEDE3E6334A1006A4026A02DD76AFA798204BD015C9965DE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/additional-node-infos/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/additional-node-infos/nodeInfo-E4477B559304AADFC0638772C0956A38FA2E2A7A5EB0E65D0D83E5884831879A" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/artemis/bindings/activemq-bindings-1.bindings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/artemis/bindings/activemq-bindings-2.bindings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/artemis/journal/activemq-data-1.amq" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/artemis/journal/activemq-data-2.amq" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/artemis/journal/server.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/brokers/rpc/bindings/activemq-bindings-1.bindings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/brokers/rpc/bindings/activemq-bindings-2.bindings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/brokers/rpc/journal/activemq-data-1.amq" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/brokers/rpc/journal/activemq-data-2.amq" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/brokers/rpc/journal/server.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/certificates/nodekeystore.jks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/certificates/sslkeystore.jks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/certificates/truststore.jks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/corda.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/cordapps/contracts-0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/cordapps/tokens-contracts-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/cordapps/tokens-money-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/cordapps/tokens-workflows-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/cordapps/workflows-0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/drivers/jolokia-jvm-1.6.0-agent.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/logs/diagnostic-DESKTOP-EVIOB70.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/logs/node-DESKTOP-EVIOB70.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/logs/node-info-gen.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/network-parameters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/node.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/persistence.mv.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/persistence.trace.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB/process-id" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyB_node.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyC/additional-node-infos/nodeInfo-2D1CA190724B008EF2466321520ABFD47CE0A9EC94FE17B034DE975A056082F3" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyC/additional-node-infos/nodeInfo-2D1CA190724B008EF2466321520ABFD47CE0A9EC94FE17B034DE975A056082F3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyC/additional-node-infos/nodeInfo-777DA369F066FE34BEDE3E6334A1006A4026A02DD76AFA798204BD015C9965DE" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyC/additional-node-infos/nodeInfo-777DA369F066FE34BEDE3E6334A1006A4026A02DD76AFA798204BD015C9965DE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyC/additional-node-infos/nodeInfo-B1F1FD9F15FCFDE1C9EE7A59504A44D669AB67B655597D60B691138E9C12E93C" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyC/additional-node-infos/nodeInfo-E4477B559304AADFC0638772C0956A38FA2E2A7A5EB0E65D0D83E5884831879A" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyC/additional-node-infos/nodeInfo-E4477B559304AADFC0638772C0956A38FA2E2A7A5EB0E65D0D83E5884831879A" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyC/artemis/bindings/activemq-bindings-1.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyC/artemis/bindings/activemq-bindings-1.bindings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyC/artemis/journal/activemq-data-1.amq" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyC/artemis/journal/activemq-data-1.amq" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyC/artemis/journal/server.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyC/artemis/journal/server.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyC/brokers/rpc/bindings/activemq-bindings-1.bindings" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyC/brokers/rpc/bindings/activemq-bindings-1.bindings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyC/brokers/rpc/journal/server.lock" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyC/brokers/rpc/journal/server.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyC/certificates/nodekeystore.jks" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyC/certificates/nodekeystore.jks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyC/certificates/sslkeystore.jks" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyC/certificates/sslkeystore.jks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyC/certificates/truststore.jks" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyC/certificates/truststore.jks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyC/cordapps/contracts-0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyC/cordapps/contracts-0.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyC/cordapps/workflows-0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyC/cordapps/workflows-0.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyC/logs/node-DESKTOP-EVIOB70.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyC/logs/node-DESKTOP-EVIOB70.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyC/logs/node-info-gen.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyC/logs/node-info-gen.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyC/network-parameters" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyC/network-parameters" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyC/nodeInfo-2D1CA190724B008EF2466321520ABFD47CE0A9EC94FE17B034DE975A056082F3" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyC/nodeInfo-2D1CA190724B008EF2466321520ABFD47CE0A9EC94FE17B034DE975A056082F3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyC/persistence.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyC/persistence.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyC/persistence.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyC/persistence.trace.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nodes/PartyC/process-id" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/PartyC/process-id" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/nodes/runnodes" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/runnodes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/nodes/runnodes.bat" beforeDir="false" afterPath="$PROJECT_DIR$/build/nodes/runnodes.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/PartyB_node.conf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/runnodes" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/runnodes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/runnodes.bat" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/runnodes.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clients/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/clients/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/build/classes/kotlin/main/quantumtoken/states/TestState.class" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/build/classes/kotlin/main/quantumtoken/states/TestState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clients/src/main/kotlin/com/template/webserver/Server.kt" beforeDir="false" afterPath="$PROJECT_DIR$/clients/src/main/kotlin/com/template/webserver/Server.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts/build/classes/kotlin/main/quantumtoken/contracts/TestContract$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts/build/classes/kotlin/main/quantumtoken/contracts/TestContract.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts/build/classes/kotlin/main/quantumtoken/states/TestState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts/build/kotlin/contracts01jar-classes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/build/kotlin/contracts01jar-classes.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contracts/build/libs/contracts-0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/build/libs/contracts-0.1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/src/main/kotlin/quantumtoken/states/TestState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/src/main/kotlin/quantumtoken/states/TestState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts/build/tmp/jar/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/build/tmp/jar/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts/src/main/kotlin/quantum/schedulable/WalletSchedulableVerifyFlow.kt" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/src/main/kotlin/quantum/schedulable/WalletSchedulableVerifyFlow.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts/src/main/kotlin/quantumtoken/contracts/TestContract.kt" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/src/main/kotlin/quantumtoken/contracts/HouseContract.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contracts/src/main/kotlin/quantumtoken/states/TestState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/src/main/kotlin/quantumtoken/states/HouseState.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workflows/build/classes/kotlin/main/quantumtoken/flows/PriceNotification.class" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/build/classes/kotlin/main/quantumtoken/flows/PriceNotification.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workflows/build/classes/kotlin/main/quantumtoken/flows/TestCreateFlow.class" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/build/classes/kotlin/main/quantumtoken/flows/TestCreateFlow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workflows/build/classes/kotlin/main/quantumtoken/flows/TestFlow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/workflows/build/classes/kotlin/main/quantumtoken/flows/TestFlowResponder$call$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/workflows/build/classes/kotlin/main/quantumtoken/flows/TestFlowResponder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workflows/build/classes/kotlin/main/quantumtoken/flows/TestFiatCurrencyIssueFlow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workflows/build/classes/kotlin/main/quantumtoken/flows/TestIssueFlow.class" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/build/classes/kotlin/main/quantumtoken/flows/TestIssueFlow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workflows/build/classes/kotlin/main/quantumtoken/flows/TestMoveFlow.class" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/build/classes/kotlin/main/quantumtoken/flows/TestMoveFlow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workflows/build/classes/kotlin/main/quantumtoken/flows/TestMoveFlowResponder$call$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/build/classes/kotlin/main/quantumtoken/flows/TestMoveFlowResponder$call$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workflows/build/classes/kotlin/main/quantumtoken/flows/TestMoveFlowResponder.class" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/build/classes/kotlin/main/quantumtoken/flows/TestMoveFlowResponder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workflows/build/classes/kotlin/main/quantumtoken/flows/TestRedeemFlow.class" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/build/classes/kotlin/main/quantumtoken/flows/TestRedeemFlow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workflows/build/classes/kotlin/main/quantumtoken/flows/TestRedeemFlowResponder$call$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/build/classes/kotlin/main/quantumtoken/flows/TestRedeemFlowResponder$call$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workflows/build/classes/kotlin/main/quantumtoken/flows/TestSellHouseFlow.class" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/build/classes/kotlin/main/quantumtoken/flows/TestSellHouseFlow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workflows/build/classes/kotlin/main/quantumtoken/flows/TestSellHouseFlowResponder$call$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/build/classes/kotlin/main/quantumtoken/flows/TestSellHouseFlowResponder$call$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workflows/build/classes/kotlin/main/quantumtoken/flows/TestSellHouseFlowResponder.class" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/build/classes/kotlin/main/quantumtoken/flows/TestSellHouseFlowResponder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workflows/build/classes/kotlin/main/quantumtoken/functions/TestFunctions.class" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/build/classes/kotlin/main/quantumtoken/functions/TestFunctions.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workflows/build/kotlin/workflows01jar-classes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/build/kotlin/workflows01jar-classes.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workflows/build/libs/workflows-0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/build/libs/workflows-0.1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workflows/src/main/kotlin/quantumtoken/flows/TestCreateFlow.kt" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/src/main/kotlin/quantumtoken/flows/TestCreateFlow.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workflows/src/main/kotlin/quantumtoken/flows/TestFlow.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/workflows/src/main/kotlin/quantumtoken/flows/TestIssueFlow.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workflows/build/tmp/jar/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/build/tmp/jar/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workflows/src/main/kotlin/quantumtoken/flows/TestCreateFlow.kt" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/src/main/kotlin/quantumtoken/flows/TestCreateHouseFlow.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workflows/src/main/kotlin/quantumtoken/flows/TestFiatCurrencyIssueFlow.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workflows/src/main/kotlin/quantumtoken/flows/TestIssueFlow.kt" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/src/main/kotlin/quantumtoken/flows/TestIssueFlow.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workflows/src/main/kotlin/quantumtoken/flows/TestMoveFlow.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workflows/src/main/kotlin/quantumtoken/flows/TestRedeemFlow.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/workflows/src/main/kotlin/quantumtoken/flows/TestSellHouseFlow.kt" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/src/main/kotlin/quantumtoken/flows/TestSellHouseFlow.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workflows/src/main/kotlin/quantumtoken/functions/TestFunctions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/workflows/src/main/kotlin/quantumtoken/functions/TestFunctions.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -115,17 +170,13 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>getD</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1OUf88I4qO2JHpZHjWlxgGhycnY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.0" />
@@ -143,6 +194,52 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager" selected="Gradle.cordapp-template-kotlin [runPartyCServer]">
+    <configuration name="cordapp-template-kotlin [runPartyAServer]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="runPartyAServer" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="cordapp-template-kotlin [runPartyCServer]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="runPartyCServer" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.cordapp-template-kotlin [runPartyCServer]" />
+        <item itemvalue="Gradle.cordapp-template-kotlin [runPartyAServer]" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />

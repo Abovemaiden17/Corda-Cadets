@@ -3,7 +3,6 @@ package quantumtoken.functions
 import co.paralleluniverse.fibers.Suspendable
 import com.r3.corda.lib.tokens.contracts.types.TokenPointer
 import com.r3.corda.lib.tokens.workflows.types.PartyAndToken
-import net.corda.core.contracts.LinearPointer
 import net.corda.core.contracts.StateAndRef
 import net.corda.core.contracts.UniqueIdentifier
 import net.corda.core.flows.CollectSignaturesFlow
@@ -18,7 +17,7 @@ import net.corda.core.transactions.SignedTransaction
 import net.corda.core.transactions.TransactionBuilder
 import net.corda.core.utilities.ProgressTracker
 import quantumtoken.*
-import quantumtoken.states.TestState
+import quantumtoken.states.HouseState
 import java.security.PublicKey
 import java.util.*
 
@@ -28,14 +27,24 @@ abstract class TestFunctions : FlowLogic<SignedTransaction>()
             CREATING, VERIFYING, SIGNING, NOTARIZING, FINALIZING
     )
 
-    fun verifyAndSign(transaction: TransactionBuilder, signingPubKeys: List<PublicKey>): SignedTransaction {
+    fun verifyAndSign(transaction: TransactionBuilder): SignedTransaction {
+        transaction.verify(serviceHub)
+        return serviceHub.signInitialTransaction(transaction)
+    }
 
+    fun verifyAndSignPubKeys(transaction: TransactionBuilder, signingPubKeys: List<PublicKey>): SignedTransaction {
         transaction.verify(serviceHub)
         return serviceHub.signInitialTransaction(transaction, signingPubKeys)
     }
 
     @Suspendable
     fun collectSignature(
+            transaction: SignedTransaction,
+            sessions: List<FlowSession>
+    ): SignedTransaction = subFlow(CollectSignaturesFlow(transaction, sessions))
+
+    @Suspendable
+    fun collectSignatureWithPubKeys(
             transaction: SignedTransaction,
             sessions: List<FlowSession>,
             signingPubKeys: List<PublicKey>
@@ -57,21 +66,21 @@ abstract class TestFunctions : FlowLogic<SignedTransaction>()
                 ?: throw IllegalArgumentException("No match found for $name")
     }
 
-    fun inputStateRefUsingLinearID(id: UniqueIdentifier): StateAndRef<TestState> {
+    fun inputStateRefUsingLinearID(id: UniqueIdentifier): StateAndRef<HouseState> {
         val criteria = QueryCriteria.LinearStateQueryCriteria(linearId = listOf(id))
-        return serviceHub.vaultService.queryBy<TestState>(criteria = criteria).states.single()
+        return serviceHub.vaultService.queryBy<HouseState>(criteria = criteria).states.single()
     }
 
-    fun inputStateRefUsingUUID(id: UUID): StateAndRef<TestState> {
+    fun inputStateRefUsingUUID(id: UUID): StateAndRef<HouseState> {
         val criteria = QueryCriteria.LinearStateQueryCriteria(null, listOf(id), null, Vault.StateStatus.UNCONSUMED, null)
-        return serviceHub.vaultService.queryBy<TestState>(criteria = criteria).states.single()
+        return serviceHub.vaultService.queryBy<HouseState>(criteria = criteria).states.single()
     }
 
     fun stringToUUID(string: String): UUID {
         return UUID.fromString(string)
     }
 
-    fun getPartyAndToken(party: Party, token: TokenPointer<TestState>): PartyAndToken<TokenPointer<TestState>> {
+    fun getPartyAndToken(party: Party, token: TokenPointer<HouseState>): PartyAndToken<TokenPointer<HouseState>> {
         return PartyAndToken(party, token)
     }
 }

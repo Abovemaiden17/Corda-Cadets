@@ -10,7 +10,7 @@ import net.corda.core.flows.InitiatingFlow
 import net.corda.core.flows.StartableByRPC
 import net.corda.core.transactions.SignedTransaction
 import quantumtoken.functions.TestFunctions
-import quantumtoken.states.TestState
+import quantumtoken.states.HouseState
 import java.util.*
 
 @InitiatingFlow
@@ -21,7 +21,7 @@ class TestIssueFlow (private val evolvableTokenId: String): TestFunctions()
     override fun call(): SignedTransaction
     {
         val evolvableTokenType = inputStateRefUsingUUID(stringToUUID(evolvableTokenId)).state.data
-        val housePtr = evolvableTokenType.toPointer<TestState>()
+        val housePtr = evolvableTokenType.toPointer<HouseState>()
         val issuedHouseToken = IssuedTokenType(ourIdentity, housePtr)
         val houseToken = NonFungibleToken(issuedHouseToken, evolvableTokenType.owner, UniqueIdentifier.fromString(UUID.randomUUID().toString()), housePtr.getAttachmentIdForGenericParam())
         return subFlow(IssueTokens(listOf(houseToken)))
