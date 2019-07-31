@@ -20,14 +20,14 @@ import net.corda.core.transactions.TransactionBuilder
 import net.corda.core.utilities.unwrap
 import com.r3.corda.lib.tokens.workflows.types.PartyAndToken
 import com.r3.corda.lib.tokens.contracts.types.TokenPointer
+import com.r3.corda.lib.tokens.contracts.types.TokenType
 import com.r3.corda.lib.tokens.contracts.utilities.issuedBy
 import com.r3.corda.lib.tokens.money.FiatCurrency
 import com.r3.corda.lib.tokens.workflows.flows.move.addMoveNonFungibleTokens
+import com.r3.corda.lib.tokens.workflows.flows.rpc.MoveFungibleTokens
+import com.r3.corda.lib.tokens.workflows.internal.selection.generateMoveNonFungible
 import com.r3.corda.lib.tokens.workflows.utilities.heldBy
-import net.corda.core.contracts.Amount
-import net.corda.core.contracts.LinearPointer
-import net.corda.core.contracts.StateAndRef
-import net.corda.core.contracts.UniqueIdentifier
+import net.corda.core.contracts.*
 import net.corda.core.node.services.Vault
 import net.corda.core.node.services.queryBy
 import net.corda.core.node.services.vault.QueryCriteria
@@ -41,17 +41,17 @@ class HouseFlow(val linearId: UniqueIdentifier, val newOwner: Party ): FlowLogic
     @Suspendable
     override fun call(): SignedTransaction {
         val uuid = UUID.fromString(linearId.toString())
-        val queryCriteria = QueryCriteria.LinearStateQueryCriteria( uuid = ImmutableList.of(uuid))
+        val queryCriteria = QueryCriteria.LinearStateQueryCriteria(uuid = ImmutableList.of(uuid))
         val stateAndRef = serviceHub.vaultService.queryBy(HouseState::class.java, queryCriteria).states[0]
         val evolvableTokenType = stateAndRef.state.data
-        val linearPointer = LinearPointer(evolvableTokenType.linearId, HouseState::class.java!!)
+        val linearPointer = LinearPointer(evolvableTokenType.linearId, HouseState::class.java)
         val token = TokenPointer(linearPointer, evolvableTokenType.fractionDigits)
         val partyAndToken = PartyAndToken(newOwner, token)
-        val criteria = QueryCriteria.LinearStateQueryCriteria(linearId = listOf(linearId))
-        val crit = serviceHub.vaultService.queryBy<HouseState>(criteria).states.single()
+        val crit = serviceHub.vaultService.queryBy<HouseState>(queryCriteria).states.single()
         val data = crit.state.data
-        val txBuilder = TransactionBuilder(notary = getPreferredNotary(serviceHub))
-        addMoveNonFungibleTokens(txBuilder,serviceHub,partyAndToken,criteria)
+        val txBuilder = TransactionBuilder(notary = serviceHub.networkMapCache.notaryIdentities.first())
+        //generateMoveNonFungible(partyAndToken,serviceHub.vaultService,queryCriteria)
+        addMoveNonFungibleTokens(txBuilder,serviceHub,partyAndToken)
         val session = initiateFlow(newOwner)
         session.send(data.valuation)
         val input = subFlow(ReceiveStateAndRefFlow<FungibleToken>(session))
@@ -73,7 +73,7 @@ class HouseFlowResponder(val othersidesession: FlowSession): FlowLogic<Unit>() {
         val houseState = othersidesession.receive<HouseState>().unwrap{it}
         val changeholder = serviceHub.keyManagementService.freshKeyAndCert(ourIdentityAndCert, false).party.anonymise()
         val (input, output) = TokenSelection(serviceHub).generateMove(
-                lockId = runId.uuid,
+                lockId = UUID.fromString(houseState.linearId.toString()),
                 partyAndAmounts = listOf(PartyAndAmount(othersidesession.counterparty, Amount(pricenotif.amount,FiatCurrency.getInstance(houseState.address)))),
                 changeHolder = changeholder
         )

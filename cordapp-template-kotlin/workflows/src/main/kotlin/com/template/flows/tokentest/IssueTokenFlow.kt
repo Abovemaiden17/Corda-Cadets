@@ -11,6 +11,7 @@ import net.corda.core.transactions.SignedTransaction
 import com.r3.corda.lib.tokens.contracts.types.TokenPointer
 import com.r3.corda.lib.tokens.contracts.utilities.issuedBy
 import com.r3.corda.lib.tokens.workflows.flows.issue.addIssueTokens
+import com.r3.corda.lib.tokens.workflows.flows.rpc.ConfidentialIssueTokens
 import com.r3.corda.lib.tokens.workflows.internal.flows.distribution.UpdateDistributionListFlow
 import com.r3.corda.lib.tokens.workflows.internal.flows.finality.ObserverAwareFinalityFlow
 import com.r3.corda.lib.tokens.workflows.utilities.addTokenTypeJar
@@ -18,7 +19,9 @@ import com.r3.corda.lib.tokens.workflows.utilities.getPreferredNotary
 import com.r3.corda.lib.tokens.workflows.utilities.heldBy
 import net.corda.core.contracts.Command
 import net.corda.core.contracts.LinearPointer
+import net.corda.core.contracts.Requirements.using
 import net.corda.core.contracts.StateAndRef
+import net.corda.core.contracts.requireThat
 import net.corda.core.flows.*
 import net.corda.core.node.services.Vault
 import net.corda.core.node.services.vault.QueryCriteria
@@ -27,7 +30,7 @@ import net.corda.core.transactions.TransactionBuilder
 import java.util.*
 import kotlin.math.sign
 
-
+@InitiatingFlow
 @StartableByRPC
 class IssueTokenFlow(val evolvableTokenId: String,val recipient: Party) : FlowLogic<SignedTransaction>() {
 
@@ -42,6 +45,7 @@ class IssueTokenFlow(val evolvableTokenId: String,val recipient: Party) : FlowLo
         val linearPointer = LinearPointer(evolvableTokenType.linearId, HouseState::class.java!!)
         val token = TokenPointer(linearPointer, evolvableTokenType.fractionDigits)
         val abstractToken : NonFungibleToken = token issuedBy ourIdentity heldBy  recipient
+        //subFlow(ConfidentialIssueTokens(listOf(abstractToken), listOf(ourIdentity)))
         return subFlow(IssueTokens(listOf(abstractToken),listOf(ourIdentity)))
 //        val transactionBuilder = TransactionBuilder(notary = stateAndRef.state.notary)
 //        addIssueTokens(transactionBuilder,abstractToken)
@@ -51,6 +55,22 @@ class IssueTokenFlow(val evolvableTokenId: String,val recipient: Party) : FlowLo
 //        subFlow(UpdateDistributionListFlow(signedTransaction))
 //        return signedTransaction
     }
+//    @InitiatedBy(IssueTokenFlow::class)
+//    class IssueTokenFlowResponder(val flowSession: FlowSession) : FlowLogic<SignedTransaction>() {
+//
+//        @Suspendable
+//        override fun call(): SignedTransaction {
+//            val signedTransactionFlow = object : SignTransactionFlow(flowSession) {
+//                override fun checkTransaction(stx: SignedTransaction) = requireThat {
+//                    val output = stx.tx.outputs.single().data
+//                    "This must be an IOU transaction" using (output is HouseState)
+//                }
+//            }
+//            val txWeJustSignedId = subFlow(signedTransactionFlow)
+//            return subFlow(ReceiveFinalityFlow(otherSideSession = flowSession, expectedTxId = txWeJustSignedId.id))
+//        }
+//    }
+
 
 
 }
