@@ -45,6 +45,12 @@ dependencies {
     // Kotlin.
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
+    cordaCompile ("$corda_release_group:corda-core:$corda_release_version") {
+        changing = true
+    }
+    cordaCompile ("$corda_release_group:corda-confidential-identities:$corda_release_version") {
+        changing = true
+    }
     // For testing.
     testCompile "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
     testCompile "$corda_release_group:corda-node-driver:$corda_release_version"
@@ -55,6 +61,7 @@ dependencies {
 
     // CorDapp dependencies.
     cordaCompile project(":contracts")
+    
 
     // Token SDK dependencies.
     cordaCompile "$tokens_release_group:tokens-money:$tokens_release_version"
