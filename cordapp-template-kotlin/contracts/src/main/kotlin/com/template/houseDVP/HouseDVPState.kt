@@ -2,6 +2,7 @@ package com.template.houseDVP
 
 import com.r3.corda.lib.tokens.contracts.states.EvolvableTokenType
 import com.r3.corda.lib.tokens.contracts.types.TokenPointer
+import com.r3.corda.lib.tokens.contracts.types.TokenType
 import net.corda.core.contracts.BelongsToContract
 import net.corda.core.contracts.UniqueIdentifier
 import net.corda.core.identity.Party
@@ -9,6 +10,7 @@ import com.template.HouseContract
 import net.corda.core.contracts.Amount
 import java.util.*
 import net.corda.core.contracts.LinearPointer
+import net.corda.core.serialization.CordaSerializable
 
 
 @BelongsToContract(HouseContract::class)
@@ -19,7 +21,9 @@ data class HouseDVPState(
         override val maintainers: List<Party>,
 
         //Properties of House State. Some of these values may evolve over time.
-        val valuation: Amount<Currency>, val noOfBedRooms: Int, val address: String) : EvolvableTokenType() {
+        val valuation: Amount<TokenType>,
+        val noOfBedRooms: Int,
+        val address: String) : EvolvableTokenType() {
 
 
       fun pointer(): TokenPointer<HouseDVPState> {

@@ -1,9 +1,18 @@
 package com.template.flows.houseDVP
 
 import co.paralleluniverse.fibers.Suspendable
+import com.r3.corda.lib.tokens.contracts.states.FungibleToken
+import com.r3.corda.lib.tokens.contracts.types.IssuedTokenType
 import com.r3.corda.lib.tokens.contracts.types.TokenPointer
+import com.r3.corda.lib.tokens.contracts.types.TokenType
+import com.r3.corda.lib.tokens.contracts.utilities.amount
+import com.r3.corda.lib.tokens.money.FiatCurrency
+import com.r3.corda.lib.tokens.money.USD
 import com.r3.corda.lib.tokens.workflows.types.PartyAndToken
+import com.r3.corda.lib.tokens.workflows.utilities.tokenAmountCriteria
 import com.template.houseDVP.HouseDVPState
+import net.corda.core.contracts.Amount
+import net.corda.core.contracts.LinearState
 import net.corda.core.contracts.StateAndRef
 import net.corda.core.contracts.UniqueIdentifier
 import net.corda.core.flows.CollectSignaturesFlow
@@ -16,6 +25,7 @@ import net.corda.core.node.services.queryBy
 import net.corda.core.node.services.vault.QueryCriteria
 import net.corda.core.transactions.SignedTransaction
 import net.corda.core.transactions.TransactionBuilder
+import java.math.BigDecimal
 import java.security.PublicKey
 import java.util.*
 
@@ -25,6 +35,15 @@ abstract class HouseDVPFunction : FlowLogic<SignedTransaction>()
 
         transaction.verify(serviceHub)
         return serviceHub.signInitialTransaction(transaction, signingPubKeys)
+    }
+    fun inputStateRef(linearId: UniqueIdentifier) : StateAndRef<HouseDVPState> {
+        val ref = QueryCriteria.LinearStateQueryCriteria(linearId = listOf(linearId))
+        return serviceHub.vaultService.queryBy<HouseDVPState>(ref).states.single()
+    }
+
+    fun inputStateRefFiat(linearId: UniqueIdentifier) : StateAndRef<FungibleToken> {
+        val ref = QueryCriteria.LinearStateQueryCriteria(linearId = listOf(linearId))
+        return serviceHub.vaultService.queryBy<FungibleToken>(ref).states.single()
     }
 
     @Suspendable
@@ -61,6 +80,18 @@ abstract class HouseDVPFunction : FlowLogic<SignedTransaction>()
 
     fun stringToUUID(string: String): UUID {
         return UUID.fromString(string)
+    }
+
+    fun stringToLinear (id: String): UniqueIdentifier {
+        return UniqueIdentifier.fromString(id)
+    }
+
+    fun tokenTypeToCurrency (currency: Amount<TokenType>) : Amount<Currency> {
+        return Amount(currency.quantity, Currency.getInstance(currency.token.tokenIdentifier))
+    }
+
+     fun currencyToTokenType (currency: Amount<Currency>) : Amount<TokenType> {
+        return Amount(currency.quantity, TokenType(currency.token.currencyCode, currency.token.defaultFractionDigits))
     }
 
     fun getPartyAndToken(party: Party, token: TokenPointer<HouseDVPState>): PartyAndToken<TokenPointer<HouseDVPState>> {

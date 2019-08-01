@@ -16,14 +16,14 @@ import net.corda.core.transactions.SignedTransaction
 @InitiatingFlow
 @StartableByRPC
 
-class FiatCurrencyIssueFlow (private val currency: String,
+open class FiatCurrencyIssueFlow (private val currency: String,
                              private val amount: Long,
-                             private val recipient: Party) : FlowLogic<SignedTransaction> () {
+                             private val recipient: String) : HouseDVPFunction () {
 
     @Suspendable
     override fun call(): SignedTransaction {
         val token = FiatCurrency.getInstance(currency)
-        val fungibleToken = Amount(amount, token) issuedBy ourIdentity heldBy recipient
+        val fungibleToken = Amount(amount, token) issuedBy ourIdentity heldBy stringToParty(recipient)
         return subFlow(IssueTokens(listOf(fungibleToken)))
     }
 }
