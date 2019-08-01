@@ -20,11 +20,10 @@ import net.corda.core.utilities.ProgressTracker
 import java.util.*
 
 @StartableByRPC
-class ExampleFlowWithEvolvableToken(
-        val evolvableTokenId: String,
-        val amount: Long,
-        val recipient: Party
-) : FlowLogic<SignedTransaction>() {
+class ExampleFlowWithEvolvableToken(val evolvableTokenId: String,
+                                    val amount: Long,
+                                    val recipient: Party) : FlowLogic<SignedTransaction>() {
+
     override val progressTracker = ProgressTracker()
 
     @Suspendable
