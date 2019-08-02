@@ -24,7 +24,11 @@ abstract class TokenFunctions : FlowLogic<SignedTransaction>()
         val criteria = QueryCriteria.LinearStateQueryCriteria(linearId = listOf(id))
         return serviceHub.vaultService.queryBy<TokenHouseState>(criteria = criteria).states.single()
     }
-
+    fun stringtoParty(owners: String): Party
+    {
+        return serviceHub.identityService.partiesFromName(owners, false).singleOrNull()
+                ?: throw IllegalArgumentException("No match found for Owner $owners.")
+    }
     fun stringToLinear(id: String): UniqueIdentifier {
         return UniqueIdentifier.fromString(id)
     }

@@ -14,7 +14,7 @@ buildscript {
         spring_boot_gradle_plugin_version = '2.0.2.RELEASE'
         slf4j_version = '1.7.25'
         log4j_version = '2.9.1'
-        jackson_version = '2.9.8'
+        jackson_version = '2.9.7'
     }
 
     repositories {
@@ -35,6 +35,7 @@ buildscript {
         classpath "net.corda.plugins:cordformation:$corda_gradle_plugins_version"
         classpath "net.corda.plugins:quasar-utils:$corda_gradle_plugins_version"
         classpath "org.springframework.boot:spring-boot-gradle-plugin:$spring_boot_gradle_plugin_version"
+        classpath "com.fasterxml.jackson.module:jackson-module-kotlin:$jackson_version"
     }
 }
 
@@ -157,19 +158,19 @@ task deployNodes(type: net.corda.plugins.Cordform, dependsOn: ['jar']) {
 //        ]
         rpcUsers = [[ user: "user2", "password": "test2", "permissions": ["ALL"]]]
     }
-    node {
-        name "O=PartyC,L=New York,C=US"
-        p2pPort 10011
-        rpcSettings {
-            address("localhost:10012")
-            adminAddress("localhost:10052")
-        }
-//        extraConfig = [
-//                'dataSourceProperties.dataSource.url' : 'jdbc:postgresql://localhost:5432/postgres',
-//                'dataSourceProperties.dataSourceClassName' : 'org.postgresql.ds.PGSimpleDataSource',
-//                'dataSourceProperties.dataSource.user' : 'postgres',
-//                'dataSourceProperties.dataSource.password' : '12345',
-//        ]
-        rpcUsers = [[ user: "user3", "password": "test3", "permissions": ["ALL"]]]
-    }
+//    node {
+//        name "O=PartyC,L=New York,C=US"
+//        p2pPort 10011
+//        rpcSettings {
+//            address("localhost:10012")
+//            adminAddress("localhost:10052")
+//        }
+////        extraConfig = [
+////                'dataSourceProperties.dataSource.url' : 'jdbc:postgresql://localhost:5432/postgres',
+////                'dataSourceProperties.dataSourceClassName' : 'org.postgresql.ds.PGSimpleDataSource',
+////                'dataSourceProperties.dataSource.user' : 'postgres',
+////                'dataSourceProperties.dataSource.password' : '12345',
+////        ]
+//        rpcUsers = [[ user: "user3", "password": "test3", "permissions": ["ALL"]]]
+//    }
 }

@@ -13,12 +13,12 @@ import net.corda.core.transactions.SignedTransaction
 import java.util.*
 
 @StartableByRPC
-class UpdateHouseValuationFlow (val houseId: String, val amount: Long,val currency: String): FlowLogic<SignedTransaction>()
+class UpdateHouseValuationFlow (val linearId: String, val amount: Long,val currency: String): FlowLogic<SignedTransaction>()
 {
     @Suspendable
     @Throws(FlowException::class)
     override fun call(): SignedTransaction {
-        val uuid = UUID.fromString(houseId)
+        val uuid = UUID.fromString(linearId)
         val queryCriteria = QueryCriteria.LinearStateQueryCriteria(uuid = listOf(uuid))
         val input = serviceHub.vaultService.queryBy<TokenHouseState>(queryCriteria).states[0]
         val houseState = input.state.data

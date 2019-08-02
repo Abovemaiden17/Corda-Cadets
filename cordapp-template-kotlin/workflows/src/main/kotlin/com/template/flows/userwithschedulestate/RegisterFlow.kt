@@ -10,7 +10,7 @@ import java.time.Instant
 @InitiatingFlow
 @StartableByRPC
 @SchedulableFlow
-class RegisterFlow : FlowLogic<SignedTransaction>() {
+class RegisterFlow  : FlowLogic<SignedTransaction>() {
     @Suspendable
     override fun call(): SignedTransaction {
         val output = RegisterState(ourIdentity,false, Instant.now(),10)

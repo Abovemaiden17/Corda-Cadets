@@ -1,10 +1,10 @@
-2019-07-31 16:21:29,223 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
-2019-07-31 16:21:29,228 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
+2019-08-01 15:56:31,619 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
+2019-08-01 15:56:31,622 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
 
    ______               __
   / ____/     _________/ /___ _
- / /     __  / ___/ __  / __ `/         Did you ever walk into an office and
-/ /___  /_/ / /  / /_/ / /_/ /          think, whiteboards are remarkable!
+ / /     __  / ___/ __  / __ `/         I used to work in a shoe recycling
+/ /___  /_/ / /  / /_/ / /_/ /          shop. It was sole destroying.
 \____/     /_/   \__,_/\__,_/
 
 --- Corda Open Source 4.1 (c11f6c1) -------------------------------------------------------------

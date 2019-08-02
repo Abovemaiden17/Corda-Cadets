@@ -28,7 +28,7 @@ import java.util.*
  */
 @InitiatingFlow
 @StartableByRPC
-class HouseSaleFlow(val houseId: String, val buyer: Party) : TokenFunctions() {
+class HouseSaleFlow(val linearId: String, val buyer: String) : TokenFunctions() {
     @Suspendable
     @Throws(FlowException::class)
     override fun call(): SignedTransaction {
@@ -47,13 +47,13 @@ class HouseSaleFlow(val houseId: String, val buyer: Party) : TokenFunctions() {
 //        subFlow(UpdateDistributionListFlow(stx))
 //        return subFlow(ObserverAwareFinalityFlow(stx, listOf(session)))
         val notary = serviceHub.networkMapCache.notaryIdentities[0]
-        val uuid = UUID.fromString(houseId)
+        val uuid = UUID.fromString(linearId)
         val queryCriteria = QueryCriteria.LinearStateQueryCriteria(uuid = ImmutableList.of(uuid))
         val houseStateAndRef = serviceHub.vaultService.queryBy<TokenHouseState>(queryCriteria).states[0]
         val houseState = houseStateAndRef.state.data
         val transactionBuilder = TransactionBuilder(notary)
-        addMoveNonFungibleTokens(transactionBuilder,serviceHub,houseState.toPointer<TokenHouseState>(),buyer)
-        val buySession = initiateFlow(buyer)
+        addMoveNonFungibleTokens(transactionBuilder,serviceHub,houseState.toPointer<TokenHouseState>(),stringtoParty(buyer))
+        val buySession = initiateFlow(stringtoParty(buyer))
         buySession.send(PriceNotification(houseState.valuation))
         val inputs = subFlow(ReceiveStateAndRefFlow<FungibleToken>(buySession))
         val outputs = buySession.receive<List<FungibleToken>>().unwrap{it}
@@ -65,6 +65,7 @@ class HouseSaleFlow(val houseId: String, val buyer: Party) : TokenFunctions() {
         subFlow(UpdateDistributionListFlow(stx))
         return subFlow(ObserverAwareFinalityFlow(stx, listOf(buySession)))
     }
+
 
 }
 @InitiatedBy(HouseSaleFlow::class)
@@ -107,4 +108,5 @@ class HouseSaleResponderFlow(private val counterpartySession: FlowSession) : Flo
 //        subFlow(ObserverAwareFinalityFlowHandler(counterpartySession))
 
     }
+
 }

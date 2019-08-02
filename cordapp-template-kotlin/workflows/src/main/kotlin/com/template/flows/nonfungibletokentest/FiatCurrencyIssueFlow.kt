@@ -22,14 +22,13 @@ import java.util.Currency
  */
 @InitiatingFlow
 @StartableByRPC
-class FiatCurrencyIssueFlow(val currency: String, val amount: Long, val recipient: Party) : FlowLogic<SignedTransaction>() {
+class FiatCurrencyIssueFlow(val currency: String, val amount: Long, val recipient: String) : TokenFunctions() {
 
     @Suspendable
     @Throws(FlowException::class)
     override fun call(): SignedTransaction {
         val token = Amount(amount,FiatCurrency.getInstance(currency))
-        val abstracttoken = token issuedBy ourIdentity heldBy recipient
+        val abstracttoken = token issuedBy ourIdentity heldBy stringtoParty(recipient)
         return subFlow(IssueTokens(listOf(abstracttoken)))
     }
-
 }

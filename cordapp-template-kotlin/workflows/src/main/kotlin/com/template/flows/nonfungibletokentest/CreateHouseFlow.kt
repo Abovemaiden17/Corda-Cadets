@@ -17,7 +17,7 @@ import net.corda.core.transactions.SignedTransaction
 import java.util.*
 
 @StartableByRPC
-class CreateHouseFlow (val owner: Party,val address: String, val amount:Long, val currency: String): FlowLogic<SignedTransaction>()
+class CreateHouseFlow (val owner: String,val address: String, val amount:Long, val currency: String): TokenFunctions()
 {
     @Suspendable
     override fun call(): SignedTransaction {
@@ -26,12 +26,14 @@ class CreateHouseFlow (val owner: Party,val address: String, val amount:Long, va
         val transactionState = TransactionState(houseState(linearId),TokenHouseContract.CONTRACT_ID,notary)
         subFlow(CreateEvolvableTokensFlow(transactionState, listOf()))
         val issueHouseToken = IssuedTokenType(ourIdentity,houseState(linearId).toPointer<TokenHouseState>())
-        val houseToken  = NonFungibleToken(issueHouseToken,owner,UniqueIdentifier.fromString(UUID.randomUUID().toString()),issueHouseToken.getAttachmentIdForGenericParam())
+
+        val houseToken  = NonFungibleToken(issueHouseToken,stringtoParty(owner),UniqueIdentifier.fromString(UUID.randomUUID().toString()),issueHouseToken.getAttachmentIdForGenericParam())
         return subFlow(IssueTokens(listOf(houseToken)))
     }
+
     private fun houseState(linearId: UniqueIdentifier): TokenHouseState
     {
-        return TokenHouseState(owner,address,
+        return TokenHouseState(stringtoParty(owner),address,
                                 Amount(amount,FiatCurrency.getInstance(currency)),
                                 linearId = linearId ,maintainers = listOf(ourIdentity))
     }
