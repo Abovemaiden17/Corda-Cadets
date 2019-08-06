@@ -1,20 +1,30 @@
 package com.template.webserver
 
 import com.fasterxml.jackson.databind.SerializationFeature
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import com.google.gson.JsonObject
 import com.r3.corda.lib.tokens.contracts.states.FungibleToken
 import com.r3.corda.lib.tokens.contracts.states.NonFungibleToken
 import com.template.DVPstateAndContract.HouseState
 import com.template.Models.*
 import com.template.flows.DVP.FiatCurrencyIssueFlow
+import com.template.flows.DVP.HouseSaleFlow
 import com.template.flows.DVP.HouseTokenCreateFlow
 import com.template.flows.DVP.HouseTokenIssueFlow
 import com.template.webserver.utilities.FlowHandlerCompletion
 import com.template.webserver.utilities.Plugin
 import net.corda.client.jackson.JacksonSupport
 import net.corda.core.messaging.vaultQueryBy
+import org.apache.http.client.methods.HttpGet
+import org.apache.http.impl.client.HttpClientBuilder
+import org.springframework.http.HttpRequest
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
+import java.io.BufferedReader
+import java.io.InputStreamReader
+
 
 
 @CrossOrigin
@@ -77,6 +87,7 @@ class dvpController(rpc: NodeRPCConnection, val flowHandlerCompletion: FlowHandl
                         it.holder,
                         it.tokenTypeJarHash)
             }
+
             HttpStatus.CREATED to list
         } catch (e: Exception) {
             HttpStatus.BAD_REQUEST to "No data"
@@ -224,6 +235,79 @@ class dvpController(rpc: NodeRPCConnection, val flowHandlerCompletion: FlowHandl
     }
 
 
+    @PostMapping(value = "/sellhouse", produces = arrayOf("application/json"))
+
+    private fun HouseSaleModel(@RequestBody SellHouse: HouseSaleModel): ResponseEntity<Map<String, Any>> {
+        val (status, result) = try {
+            val SellTheHouse = HouseSaleModel(SellHouse.houseId,SellHouse.buyer)
+
+            val flowReturn = proxy.startFlowDynamic(
+
+                    HouseSaleFlow::class.java,
+                    SellTheHouse.houseId,
+                    SellTheHouse.buyer
+            )
+
+            flowHandlerCompletion.flowHandlerCompletion(flowReturn)
+            HttpStatus.CREATED to SellHouse
+
+        } catch (e: Exception) {
+            HttpStatus.BAD_REQUEST to "$e"
+        }
+        val stat = "status" to status.value()
+
+        val mess = if (status == HttpStatus.CREATED) {
+            "message" to "Successful"
+        } else {
+            "message" to "Failed"
+        }
+        val res = "result" to result
+        return ResponseEntity.status(status).body(mapOf(stat, mess, res))
+    }
+
+//
+    @GetMapping(value = "/trysample", produces = arrayOf("application/json"))
+    private fun trysample() {
+        val httpclient = HttpClientBuilder.create().build()
+        val request = HttpGet("https://api.exchangeratesapi.io/latest?base=USD&symbols=PHP,USD")
+
+        val response = httpclient.execute(request)
+        val inputStreamReader = InputStreamReader(response.entity.content)
+
+        val bufferReader = BufferedReader(inputStreamReader).use {
+            val stringBuff = StringBuffer()
+            var inputLine = it.readLine()
+
+
+            while (inputLine != null) {
+                stringBuff.append(inputLine)
+
+                inputLine = it.readLine()
+            }
+
+            val gson = GsonBuilder().create()
+
+            val jsonWholeObject = gson.fromJson<JsonObject>(stringBuff.toString(), JsonObject::class.java)
+            val basee = jsonWholeObject.get("base")
+            jsonWholeObject.get("rates")
+            jsonWholeObject.get("rates").asJsonObject.get("USD")
+            jsonWholeObject.get("rates").asJsonObject.get("PHP")
+//
+            TryModel(
+                    base = basee.toString()
+            )
+
+
+
+            it.close()
+
+            println("Response : $stringBuff")
+
+
+        }
+
+        return bufferReader
+    }
 
 
 

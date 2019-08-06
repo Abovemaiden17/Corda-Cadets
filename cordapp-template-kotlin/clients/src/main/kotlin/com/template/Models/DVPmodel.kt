@@ -58,6 +58,18 @@ data class NonFungibleIssueModel @JsonCreator constructor(
         val linearId: String,
         val owner: String
 )
+data class HouseSaleModel @JsonCreator constructor(
+        val houseId: String,
+        val buyer: String
+)
+
+data class TryModel (
+      val base: String
+
+)
+
+
+
 
 //data class TokenSettleModel @JsonCreator constructor(
 //        val amountToPay: Long,

@@ -1,10 +1,10 @@
-2019-07-30 10:41:50,214 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
-2019-07-30 10:41:50,217 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
+2019-08-06 08:16:59,576 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
+2019-08-06 08:16:59,578 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
 
    ______               __
   / ____/     _________/ /___ _
- / /     __  / ___/ __  / __ `/         Top tip: never say "oops", instead
-/ /___  /_/ / /  / /_/ / /_/ /          always say "Ah, Interesting!"
+ / /     __  / ___/ __  / __ `/         Old bankers never die, they
+/ /___  /_/ / /  / /_/ / /_/ /          just... pass the buck
 \____/     /_/   \__,_/\__,_/
 
 --- Corda Open Source 4.1 (c11f6c1) -------------------------------------------------------------

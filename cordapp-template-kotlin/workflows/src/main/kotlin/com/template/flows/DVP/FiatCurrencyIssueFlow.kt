@@ -17,16 +17,12 @@ import net.corda.core.transactions.SignedTransaction
 
 class FiatCurrencyIssueFlow(private val currency: String,
                             private val amount: Long,
-                            private val recipient: Party) : FlowLogic<SignedTransaction>() {
-
+                            private val recipient: String) : FlowFunctions() {
     @Suspendable
     @Throws(FlowException::class)
     override fun call(): SignedTransaction {
-        /* Create an instance of the fiat currency token */
         val token = Amount(amount,FiatCurrency.getInstance(currency))
-        /* Issue the required amount of the token to the recipient */
-        val abstrctToken= token issuedBy ourIdentity heldBy recipient
-
+        val abstrctToken= token issuedBy ourIdentity heldBy stringToParty(recipient)
         return subFlow(IssueTokens(listOf(abstrctToken)))
 }
 
