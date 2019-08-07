@@ -64,7 +64,10 @@ data class HouseSaleModel @JsonCreator constructor(
 )
 
 data class TryModel (
-      val base: String
+        val rates: String,
+        val base: String,
+        val date: String
+
 
 )
 

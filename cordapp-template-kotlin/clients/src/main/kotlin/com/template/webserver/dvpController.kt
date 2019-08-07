@@ -7,6 +7,7 @@ import com.google.gson.JsonObject
 import com.r3.corda.lib.tokens.contracts.states.FungibleToken
 import com.r3.corda.lib.tokens.contracts.states.NonFungibleToken
 import com.template.DVPstateAndContract.HouseState
+import com.template.DVPstateAndContract.trystate
 import com.template.Models.*
 import com.template.flows.DVP.FiatCurrencyIssueFlow
 import com.template.flows.DVP.HouseSaleFlow
@@ -267,50 +268,54 @@ class dvpController(rpc: NodeRPCConnection, val flowHandlerCompletion: FlowHandl
 
 //
     @GetMapping(value = "/trysample", produces = arrayOf("application/json"))
-    private fun trysample() {
-        val httpclient = HttpClientBuilder.create().build()
-        val request = HttpGet("https://api.exchangeratesapi.io/latest?base=USD&symbols=PHP,USD")
+    private fun trysample() : ResponseEntity<Map<String, Any>> {
+    val httpclient = HttpClientBuilder.create().build()
+    val request = HttpGet("https://api.exchangeratesapi.io/latest?base=USD&symbols=PHP,USD")
+    val response = httpclient.execute(request)
+    val inputStreamReader = InputStreamReader(response.entity.content)
+        val (status, result) = try {
+            val TokenStateRef = proxy.vaultQueryBy<trystate>().states
+            val tokenState = TokenStateRef.map { it.state.data }
+            val list = tokenState.map {
 
-        val response = httpclient.execute(request)
-        val inputStreamReader = InputStreamReader(response.entity.content)
+                val bufferReader = BufferedReader(inputStreamReader).use {
+                    val stringBuff = StringBuffer()
+                    var inputLine = it.readLine()
+                    while (inputLine != null) {
+                        stringBuff.append(inputLine)
+                        inputLine = it.readLine()
+                    }
+                    val gson = GsonBuilder().create()
+                    val jsonWholeObject = gson.fromJson<JsonObject>(stringBuff.toString(), JsonObject::class.java)
 
-        val bufferReader = BufferedReader(inputStreamReader).use {
-            val stringBuff = StringBuffer()
-            var inputLine = it.readLine()
+                    val basee = jsonWholeObject.get("base")
+                    val ratess = jsonWholeObject.get("rates")
+                    val dates = jsonWholeObject.get("date")
 
-
-            while (inputLine != null) {
-                stringBuff.append(inputLine)
-
-                inputLine = it.readLine()
+                    TryModel(
+                            rates = ratess.toString(),
+                            base = basee.toString(),
+                            date = dates.toString()
+                    )
+                }
             }
-
-            val gson = GsonBuilder().create()
-
-            val jsonWholeObject = gson.fromJson<JsonObject>(stringBuff.toString(), JsonObject::class.java)
-            val basee = jsonWholeObject.get("base")
-            jsonWholeObject.get("rates")
-            jsonWholeObject.get("rates").asJsonObject.get("USD")
-            jsonWholeObject.get("rates").asJsonObject.get("PHP")
-//
-            TryModel(
-                    base = basee.toString()
-            )
-
-
-
-            it.close()
-
-            println("Response : $stringBuff")
-
-
+            HttpStatus.CREATED to list
+        } catch (e: Exception) {
+            HttpStatus.BAD_REQUEST to "No data"
         }
+        val stat = "status" to status
 
-        return bufferReader
-    }
+        val mess = if (status == HttpStatus.CREATED) {
+            "message" to "Successful"
+        } else {
+            "message" to "Failed"
+        }
+        val res = "result" to result
 
 
+        return ResponseEntity.status(status).body(mapOf(stat, mess, res))
 
 
+}
 
 }

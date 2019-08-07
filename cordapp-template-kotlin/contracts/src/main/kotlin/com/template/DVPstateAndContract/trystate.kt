@@ -9,14 +9,14 @@ import net.corda.core.serialization.CordaSerializable
 @BelongsToContract(trycontract::class)
 
 @CordaSerializable
-class trystate(val rates: Amount,
-               val base: String,
-               val date: String,
-               override val linearId: UniqueIdentifier,
-               override val participants: List<AbstractParty>) : LinearState {
+data class trystate(val rates: Amount,
+                    val base: String,
+                    val date: String,
+                    override val linearId: UniqueIdentifier,
+                    override val participants: List<AbstractParty>) : LinearState {
 
 
 }
 
 @CordaSerializable
-data class Amount(val basecurrency: String, val baseamount: Long, val convertcurrency: String, val convertamount: Long)
+data class Amount(val basecurrency: String, val baseamount: Int, val convertcurrency: String, val convertamount: Int)
