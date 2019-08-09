@@ -32,20 +32,6 @@ class HouseSaleFlow(val linearId: String, val buyer: String) : TokenFunctions() 
     @Suspendable
     @Throws(FlowException::class)
     override fun call(): SignedTransaction {
-//        val house = inputStateRef(stringToLinear(houseId)).state.data
-//        val txBuilder = TransactionBuilder(notary = getPreferredNotary(serviceHub))
-//        val session = initiateFlow(buyer)
-//        addMoveNonFungibleTokens(txBuilder, serviceHub, house.toPointer<TokenHouseState>(), buyer)
-//        session.send(PriceNotification(house.valuation))
-//        val inputs = subFlow(ReceiveStateAndRefFlow<FungibleToken>(session))
-//        val outputs = session.receive<List<FungibleToken>>().unwrap { it }
-//        addMoveTokens(txBuilder, inputs, outputs)
-//        subFlow(IdentitySyncFlow.Send(session, txBuilder.toWireTransaction(serviceHub)))
-//        val ourSigningKeys = txBuilder.toLedgerTransaction(serviceHub).ourSigningKeys(serviceHub)
-//        val initialStx = serviceHub.signInitialTransaction(txBuilder, signingPubKeys = ourSigningKeys)
-//        val stx = subFlow(CollectSignaturesFlow(initialStx, listOf(session), ourSigningKeys))
-//        subFlow(UpdateDistributionListFlow(stx))
-//        return subFlow(ObserverAwareFinalityFlow(stx, listOf(session)))
         val notary = serviceHub.networkMapCache.notaryIdentities[0]
         val uuid = UUID.fromString(linearId)
         val queryCriteria = QueryCriteria.LinearStateQueryCriteria(uuid = ImmutableList.of(uuid))
@@ -91,22 +77,5 @@ class HouseSaleResponderFlow(private val counterpartySession: FlowSession) : Flo
             }
         })
         subFlow(ObserverAwareFinalityFlowHandler(counterpartySession))
-//        val price = counterpartySession.receive<PriceNotification>().unwrap{it}
-//        val priceToken = price.amount
-//        val tokenSelection = TokenSelection(serviceHub,8,100,2000)
-//        val partyAmount = PartyAndAmount(counterpartySession.counterparty,priceToken)
-//        val inputsAndOutputs =
-//                tokenSelection.generateMove(runId.uuid,ImmutableList.of(partyAmount),ourIdentity,null)
-//        subFlow(SendStateAndRefFlow(counterpartySession,inputsAndOutputs.first))
-//        counterpartySession.send(inputsAndOutputs.second)
-//        subFlow(object : SignTransactionFlow(counterpartySession) {
-//            @Throws(FlowException::class)
-//            override fun checkTransaction(stx: SignedTransaction) {
-//                // Custom Logic to validate transaction.
-//            }
-//        })
-//        subFlow(ObserverAwareFinalityFlowHandler(counterpartySession))
-
     }
-
 }

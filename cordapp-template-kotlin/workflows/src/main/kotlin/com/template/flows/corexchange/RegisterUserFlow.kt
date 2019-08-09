@@ -2,47 +2,39 @@ package com.template.flows.corexchange
 
 import co.paralleluniverse.fibers.Suspendable
 import com.r3.corda.lib.tokens.contracts.types.TokenType
+import com.sun.corba.se.pept.transport.Acceptor
 import com.template.states.UserState
 import com.template.types.UserContract
+import jdk.nashorn.internal.ir.LexicalContextNode
 import net.corda.core.contracts.Amount
 import net.corda.core.contracts.Command
 import net.corda.core.flows.*
+import net.corda.core.identity.CordaX500Name
+import net.corda.core.identity.Party
 import net.corda.core.transactions.SignedTransaction
 import net.corda.core.transactions.TransactionBuilder
 
 @InitiatingFlow
 @StartableByRPC
-class RegisterUserFlow(val name: String, val wallet: List<Amount<TokenType>>): FlowLogic<SignedTransaction>()
+class RegisterUserFlow(val name: String, val wallet: List<Amount<TokenType>>): FunctionFlows()
 {
     @Suspendable
     override fun call(): SignedTransaction {
-        val transaction = transaction(register())
-        val verify = verifyAndSign(transaction)
-        val session :List<FlowSession> = emptyList()
-        val transactionSignedbyBoth :SignedTransaction = verify
-        return recordRegister(transactionSignedbyBoth,session)
-    }
-
-    private fun transaction(state: UserState): TransactionBuilder
-    {
         val notary = serviceHub.networkMapCache.notaryIdentities.first()
-        val command = Command(UserContract.Commands.Register(),ourIdentity.owningKey)
-        val builder = TransactionBuilder(notary = notary)
-                .addCommand(command)
-                .addOutputState(state = state,contract = UserContract.ID_Contracts)
-        return builder
+        val transaction = verifyAndSign(transaction(register(),notary))
+        val session  = emptyList<FlowSession>()
+        val stx = subFlow(CollectSignaturesFlow(transaction, session))
+        subFlow(BroadcastFlow(stx))
+        return recordRegister(stx,session)
     }
     private fun register(): UserState
     {
-        return UserState(name,wallet, listOf(ourIdentity))
+        return UserState(name,wallet.toMutableList(), listOf(ourIdentity))
     }
-    private fun verifyAndSign(transactionBuilder: TransactionBuilder):SignedTransaction
-    {
-        transactionBuilder.verify(serviceHub)
-        return serviceHub.signInitialTransaction(transactionBuilder)
+    private fun transaction(state: UserState,notary: Party)
+            = TransactionBuilder(notary = notary).apply {
+        val command = Command(UserContract.Commands.Register(),ourIdentity.owningKey)
+        addOutputState(state,UserContract.ID_Contracts)
+        addCommand(command)
     }
-    @Suspendable
-    private fun recordRegister(transaction:SignedTransaction,session: List<FlowSession>): SignedTransaction
-    = subFlow(FinalityFlow(transaction,session))
-
 }

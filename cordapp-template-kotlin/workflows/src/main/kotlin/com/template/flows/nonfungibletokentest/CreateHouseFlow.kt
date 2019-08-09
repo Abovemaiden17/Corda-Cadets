@@ -26,7 +26,6 @@ class CreateHouseFlow (val owner: String,val address: String, val amount:Long, v
         val transactionState = TransactionState(houseState(linearId),TokenHouseContract.CONTRACT_ID,notary)
         subFlow(CreateEvolvableTokensFlow(transactionState, listOf()))
         val issueHouseToken = IssuedTokenType(ourIdentity,houseState(linearId).toPointer<TokenHouseState>())
-
         val houseToken  = NonFungibleToken(issueHouseToken,stringtoParty(owner),UniqueIdentifier.fromString(UUID.randomUUID().toString()),issueHouseToken.getAttachmentIdForGenericParam())
         return subFlow(IssueTokens(listOf(houseToken)))
     }

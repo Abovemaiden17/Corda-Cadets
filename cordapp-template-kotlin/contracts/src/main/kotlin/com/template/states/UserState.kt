@@ -10,6 +10,8 @@ import net.corda.core.identity.Party
 
 @BelongsToContract(UserContract::class)
 data class UserState(val name: String,
-                     val wallet: List<Amount<TokenType>>,
+                     val wallet: MutableList<Amount<TokenType>>,
                      override val participants: List<Party>,
                      override val linearId: UniqueIdentifier = UniqueIdentifier()): LinearState
+{
+}
